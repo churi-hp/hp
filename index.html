@@ -1,16 +1,37 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>晴也のホームページ</title>
-  <link rel="stylesheet" href="style.css"> <!-- 外部CSSを読み込む -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- ヘッダー部分（背景写真＋タイトル） -->
   <header class="site-header">
     <h1 class="site-title">晴也のブログ</h1>
     <p class="site-subtitle">デザインと実用性を両立する</p>
   </header>
+
+  <!-- トピックス横スライドバー -->
+  <section class="topics-slider">
+    <div class="slider-container">
+      <div class="slide"><img src="images/topic1.jpg" alt="トピック1"></div>
+      <div class="slide"><img src="images/topic2.jpg" alt="トピック2"></div>
+      <div class="slide"><img src="images/topic3.jpg" alt="トピック3"></div>
+      <div class="slide"><img src="images/topic4.jpg" alt="トピック4"></div>
+    </div>
+  </section>
+
+  <!-- 記事エリア -->
+  <main class="articles">
+    <article>
+      <h2>記事タイトル1</h2>
+      <p>ここに記事の内容が入ります。背景やレイアウトをCSSで自由に調整できます。</p>
+    </article>
+    <article>
+      <h2>記事タイトル2</h2>
+      <p>ここに記事の内容が入ります。写真やリンクを追加することも可能です。</p>
+    </article>
+  </main>
 </body>
 </html>
-
