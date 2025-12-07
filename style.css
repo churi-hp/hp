@@ -1,0 +1,10 @@
+/* style.css */
+.site-header {
+  background: url("images/header.jpg") center/cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  color: white;
+}
+
