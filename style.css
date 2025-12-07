@@ -18,6 +18,8 @@
 
 /* 横スライドバー */
 .topics-slider {
+  margin-top: 20px;
+  margin-bottom: 20px;  
   overflow-x: auto;              /* 横スクロール可能にする */
   white-space: nowrap;           /* 横並び */
   background: #f5f5f5;
