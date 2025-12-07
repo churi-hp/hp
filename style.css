@@ -23,7 +23,7 @@
   overflow-x: auto;              /* 横スクロール可能にする */
   white-space: nowrap;           /* 横並び */
   background: #f5f5f5;
-  padding: 50px 0;
+  padding: 100px 0;
 }
 .slider-container {
   display: inline-flex;
