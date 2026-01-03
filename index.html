@@ -16,28 +16,27 @@
 <img src="CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG" alt="説明文" class="under-header-photo">
  
   <!-- トピックス横スライドバー -->
-  <div class="slider-wrapper">
-    <div class="slider-track">
-      <!-- 7枚の写真（1周目） -->
-      <img src="photo1.jpg" alt="">
-      <img src="photo2.jpg" alt="">
-      <img src="photo3.jpg" alt="">
-      <img src="photo4.jpg" alt="">
-      <img src="photo5.jpg" alt="">
-      <img src="photo6.jpg" alt="">
-      <img src="photo7.jpg" alt="">
+ <div class="loop-slider" id="loopSlider">
+  <div class="track">
+    <img src="img1.jpg" />
+    <img src="img2.jpg" />
+    <img src="img3.jpg" />
+    <img src="img4.jpg" />
+    <img src="img5.jpg" />
+    <img src="img6.jpg" />
+    <img src="img7.jpg" />
 
-      <!-- 無限ループ用に同じ7枚をもう一度並べる -->
-      <img src="photo1.jpg" alt="">
-      <img src="photo2.jpg" alt="">
-      <img src="photo3.jpg" alt="">
-      <img src="photo4.jpg" alt="">
-      <img src="photo5.jpg" alt="">
-      <img src="photo6.jpg" alt="">
-      <img src="photo7.jpg" alt="">
-    </div>
+    <!-- 無限ループ用に複製 -->
+    <img src="img1.jpg" />
+    <img src="img2.jpg" />
+    <img src="img3.jpg" />
+    <img src="img4.jpg" />
+    <img src="img5.jpg" />
+    <img src="img6.jpg" />
+    <img src="img7.jpg" />
   </div>
-  
+</div>
+   
     <!-- SNSアイコンバー（記事1の上） -->
   <div class="social-links">
     <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -58,5 +57,40 @@
       <p>ここに記事の内容が入ります。写真やリンクを追加することも可能です。</p>
     </article>
   </main>
+
+<script>
+  const slider = document.getElementById("loopSlider");
+  const track = slider.querySelector(".track");
+  const images = track.children;
+  const imgWidth = 150; // 画像幅
+  const total = images.length / 2; // 元の画像枚数（7）
+
+  let position = 0;
+
+  function autoSlide() {
+    position += 1; // 1pxずつ動かす（速度調整可）
+
+    // 7枚 × 150px = 1050px を超えたらリセット
+    if (position >= imgWidth * total) {
+      position = 0;
+    }
+
+    slider.scrollLeft = position;
+  }
+
+  // 自動スライド開始
+  let timer = setInterval(autoSlide, 20); // 速度は20msごとに1px
+
+  // スワイプしたら一時停止
+  slider.addEventListener("touchstart", () => {
+    clearInterval(timer);
+  });
+
+  // スワイプ終了後、再開
+  slider.addEventListener("touchend", () => {
+    timer = setInterval(autoSlide, 20);
+  });
+</script>
+  
 </body>
 </html>
