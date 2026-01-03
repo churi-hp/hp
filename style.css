@@ -20,7 +20,6 @@
 }
 
 .loop-slider {
-  margin-top: 20px;
   width: 100%;
   overflow-x: scroll;
   scroll-behavior: smooth;
@@ -37,19 +36,9 @@
 }
 
 .loop-slider img {
-  width: 150px;
+  width: 100%;      /* 横幅いっぱい */
   height: auto;
   flex-shrink: 0;
-}
-
-/* 横スライドアニメーション */
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-1400px); /* 200px × 7枚 */
-  }
 }
 
 /* SNSアイコンバー */
