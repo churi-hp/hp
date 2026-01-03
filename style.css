@@ -21,37 +21,26 @@
 
 }
 
-/* スライダー全体 */
 .loop-slider {
   overflow: hidden;
   width: 100%;
-  background: #FFF; /* 背景色は自由に変更 */
+  position: relative;
 }
 
-/* 横に並べるトラック */
 .loop-slider {
   display: flex;
-  width: calc(250px * 8); /* 画像幅 × 枚数（2倍にすると滑らか） */
-  animation: scroll 20s linear infinite;
+  gap: 20px;
+  transition: transform 0.5s ease;
 }
 
-/* 画像のスタイル */
 .loop-slider img {
-  width: 200px;      /* 固定したい横幅 */
-  height: 200px;     /* 固定したい高さ */
-  object-fit: cover; /* 画像を切り抜いて枠にフィット */
-  margin-right: 20px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
   border-radius: 10px;
+  user-select: none;
+  pointer-events: none;
 }
-
-/* 横に流れるアニメーション */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 
 /* SNSアイコンバー */
 .social-links {
