@@ -1,20 +1,3 @@
-/* ヘッダー0部分 */
-.site-header0 {
-    text-align: center;
-  padding: 40px 20px;
-  color: white;
-}
-.site-title {
-  display: none;
-  font-size: 3rem;
-  margin: 0;
-}
-.site-subtitle {
-  display: none;
-  font-size: 1.2rem;
-  margin: 10px 0 0;
-}
-
 /* ヘッダー部分 */
 .site-header {
   background: url("CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG") center/cover no-repeat;
