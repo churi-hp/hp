@@ -19,29 +19,42 @@
   margin-top: 10px;    /* ヘッダーとの隙間をなくす */
 }
 
-.slider {
-  width: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slider-wrapper {
+  width: 150px;        /* 1枚分の幅 */
+  margin: 20px auto;
   overflow: hidden;
-  position: relative;
 }
 
 .slider {
   display: flex;
-  width: 300%; /* 画像3枚なら3倍 */
-  animation: slide 12s infinite;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
-.slider img {
+.slide {
+  flex: 0 0 150px;
+  height: 150px;
+  scroll-snap-align: start;
+}
+
+.slide img {
   width: 150px;
   height: 150px;
-  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
 }
 
-@keyframes slide {
-  0%   { transform: translateX(0); }
-  33%  { transform: translateX(-100%); }
-  66%  { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
+/* スクロールバー非表示（必要なら） */
+.slider::-webkit-scrollbar {
+  display: none;
 }
 
 /* SNSアイコンバー */
