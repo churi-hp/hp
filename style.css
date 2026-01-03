@@ -19,26 +19,30 @@
   margin-top: 10px;    /* ヘッダーとの隙間をなくす */
 }
 
-.auto-slider {
-  overflow: hidden;
+.slider {
   width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-.auto-slider {
+.slides {
   display: flex;
-  gap: 20px;
-  transition: transform 0.5s ease;
+  width: 300%; /* 画像3枚なら3倍 */
+  animation: slide 12s infinite;
 }
 
-.auto-slider img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  user-select: none;
-  pointer-events: none;
+.slides img {
+  width: 150%;
+  height: 150%;
+  flex-shrink: 0;
 }
 
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
 
 /* SNSアイコンバー */
 .social-links {
