@@ -19,26 +19,26 @@
   margin-top: 10px;    /* ヘッダーとの隙間をなくす */
 }
 
-.loop-slider {
+.auto-slider {
   overflow: hidden;
   width: 100%;
-  position: relative;
 }
 
-.loop-slider {
+.auto-track {
   display: flex;
   gap: 20px;
   transition: transform 0.5s ease;
 }
 
-.loop-slider img {
-  width: 200px;
-  height: 200px;
+.auto-track img {
+  width: 250px;
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
   user-select: none;
   pointer-events: none;
 }
+
 
 /* SNSアイコンバー */
 .social-links {
