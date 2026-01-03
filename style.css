@@ -27,22 +27,18 @@
 
 .slider-wrapper {
   width: 100%;
-  margin: 20px auto;
   overflow: hidden;
 }
 
 .slider {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  overflow-x: hidden; /* ← 自動スライド用に隠す */
   -webkit-overflow-scrolling: touch;
 }
 
 .slide {
   flex: 0 0 150px;
   height: 150px;
-  scroll-snap-align: start;
 }
 
 .slide img {
@@ -50,11 +46,6 @@
   height: 150px;
   object-fit: cover;
   display: block;
-}
-
-/* スクロールバー非表示（必要なら） */
-.slider::-webkit-scrollbar {
-  display: none;
 }
 
 /* SNSアイコンバー */
