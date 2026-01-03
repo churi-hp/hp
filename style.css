@@ -1,5 +1,5 @@
-/* ヘッダー部分 */
-.site-header {
+/* ヘッダー0部分 */
+.site-header0 {
   background: url("CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG") center/cover no-repeat;
   text-align: center;
   padding: 240px 20px;
@@ -16,8 +16,8 @@
   margin: 10px 0 0;
 }
 
-/* ヘッダー1部分 */
-.site-header1 {
+/* ヘッダー部分 */
+.site-header {
   background: url("CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG") center/cover no-repeat;
   text-align: center;
   padding: 240px 20px;
