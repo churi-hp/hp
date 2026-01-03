@@ -21,7 +21,6 @@
 
 /* スライダー全体 */
 .loop-slider {
-  margin-top: 20;
   overflow: hidden;
   width: 100%;
   background: #FFF; /* 背景色は自由に変更 */
