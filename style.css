@@ -20,6 +20,7 @@
 }
 
 .loop-slider {
+  margin-top: 20px;
   width: 100%;
   overflow-x: scroll;
   scroll-behavior: smooth;
