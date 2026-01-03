@@ -16,24 +16,6 @@
   margin: 10px 0 0;
 }
 
-/* ヘッダー1部分 */
-.site-header1 {
-  background: url("CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG") center/cover no-repeat;
-  text-align: center;
-  padding: 240px 20px;
-  color: white;
-}
-.site-title {
-  display: none;
-  font-size: 3rem;
-  margin: 0;
-}
-.site-subtitle {
-  display: none;
-  font-size: 1.2rem;
-  margin: 10px 0 0;
-}
-
 /* 横スライドバー */
 .topics-slider {
   margin-top: 15px;   /* 上に40pxの余白 */
