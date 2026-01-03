@@ -19,33 +19,43 @@
   margin-top: 0px;    /* ヘッダーとの隙間をなくす */
 }
 
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 40px;
+  background: #f5f5f5;
+  font-family: sans-serif;
 }
 
 .slider-wrapper {
-  width: 100%;
+  width: 200px;        /* 表示枠は写真1枚分 */
+  height: 200px;
+  margin: 0 auto;
   overflow: hidden;
+  border: 2px solid #ccc;
+  background: #fff;
 }
 
-.slider {
+.slider-track {
   display: flex;
-  overflow-x: hidden; /* ← 自動スライド用に隠す */
-  -webkit-overflow-scrolling: touch;
+  width: calc(200px * 14); /* 7枚 × 2セット */
+  animation: slide 21s linear infinite;
 }
 
-.slide {
-  flex: 0 0 150px;
-  height: 150px;
-}
-
-.slide img {
-  width: 150px;
-  height: 150px;
+.slider-track img {
+  width: 200px;
+  height: 200px;
   object-fit: cover;
-  display: block;
+  flex-shrink: 0;
+}
+
+/* 横スライドアニメーション */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1400px); /* 200px × 7枚 */
+  }
 }
 
 /* SNSアイコンバー */
