@@ -16,27 +16,27 @@
 <img src="CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG" alt="説明文" class="under-header-photo">
  
   <!-- トピックス横スライドバー -->
-<div class="slider-wrapper">
-  <div class="slider" id="slider">
-    <!-- 元の7枚 -->
-    <div class="slide"><img src="img1.jpg"></div>
-    <div class="slide"><img src="img2.jpg"></div>
-    <div class="slide"><img src="img3.jpg"></div>
-    <div class="slide"><img src="img4.jpg"></div>
-    <div class="slide"><img src="img5.jpg"></div>
-    <div class="slide"><img src="img6.jpg"></div>
-    <div class="slide"><img src="img7.jpg"></div>
+  <div class="slider-wrapper">
+    <div class="slider-track">
+      <!-- 7枚の写真（1周目） -->
+      <img src="photo1.jpg" alt="">
+      <img src="photo2.jpg" alt="">
+      <img src="photo3.jpg" alt="">
+      <img src="photo4.jpg" alt="">
+      <img src="photo5.jpg" alt="">
+      <img src="photo6.jpg" alt="">
+      <img src="photo7.jpg" alt="">
 
-    <!-- ★複製（ループ用） -->
-    <div class="slide"><img src="img1.jpg"></div>
-    <div class="slide"><img src="img2.jpg"></div>
-    <div class="slide"><img src="img3.jpg"></div>
-    <div class="slide"><img src="img4.jpg"></div>
-    <div class="slide"><img src="img5.jpg"></div>
-    <div class="slide"><img src="img6.jpg"></div>
-    <div class="slide"><img src="img7.jpg"></div>
+      <!-- 無限ループ用に同じ7枚をもう一度並べる -->
+      <img src="photo1.jpg" alt="">
+      <img src="photo2.jpg" alt="">
+      <img src="photo3.jpg" alt="">
+      <img src="photo4.jpg" alt="">
+      <img src="photo5.jpg" alt="">
+      <img src="photo6.jpg" alt="">
+      <img src="photo7.jpg" alt="">
+    </div>
   </div>
-</div>
   
     <!-- SNSアイコンバー（記事1の上） -->
   <div class="social-links">
@@ -58,56 +58,5 @@
       <p>ここに記事の内容が入ります。写真やリンクを追加することも可能です。</p>
     </article>
   </main>
-  
-<script>
-const slider = document.getElementById('slider');
-const slideWidth = 150;
-const originalCount = 7; // 元の画像枚数
-let position = 0;
-
-// 自動スライド
-function autoSlide() {
-  position += 1; // 1pxずつ動かす（自然な流れ）
-  slider.style.transform = `translateX(${-position}px)`;
-
-  // ★ ループ処理（元の7枚ぶん進んだら巻き戻す）
-  if (position >= slideWidth * originalCount) {
-    position = 0;
-    slider.style.transition = "none";
-    slider.style.transform = `translateX(0px)`;
-    requestAnimationFrame(() => {
-      slider.style.transition = "transform 0.2s linear";
-    });
-  }
-}
-
-setInterval(autoSlide, 10); // スピード調整可能
-
-// ----------------------
-// スワイプ対応
-// ----------------------
-let startX = 0;
-let isTouching = false;
-
-slider.addEventListener('touchstart', (e) => {
-  isTouching = true;
-  startX = e.touches[0].clientX;
-});
-
-slider.addEventListener('touchmove', (e) => {
-  if (!isTouching) return;
-  const currentX = e.touches[0].clientX;
-  const diff = startX - currentX;
-  position += diff;
-  slider.style.transform = `translateX(${-position}px)`;
-  startX = currentX;
-});
-
-slider.addEventListener('touchend', () => {
-  isTouching = false;
-});
-  </script>
-
-  
 </body>
 </html>
