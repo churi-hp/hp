@@ -16,6 +16,13 @@
   margin: 10px 0 0;
 }
 
+.under-header-photo {
+  width: 100%;      /* 横幅いっぱいに表示 */
+  height: auto;     /* 縦横比を保つ */
+  display: block;   /* 余計な隙間を消す */
+  margin-top: 20;    /* ヘッダーとの隙間をなくす */
+}
+
 /* 横スライドバー */
 .topics-slider {
   margin-top: 15px;   /* 上に40pxの余白 */
