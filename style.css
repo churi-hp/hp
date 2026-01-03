@@ -26,7 +26,7 @@
 }
 
 .slider-wrapper {
-  width: 150px;        /* 1枚分の幅 */
+  width: 100%;
   margin: 20px auto;
   overflow: hidden;
 }
