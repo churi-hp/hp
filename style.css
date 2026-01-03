@@ -24,15 +24,15 @@
   width: 100%;
 }
 
-.auto-track {
+.auto-slider {
   display: flex;
   gap: 20px;
   transition: transform 0.5s ease;
 }
 
-.auto-track img {
-  width: 250px;
-  height: 150px;
+.auto-slider img {
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
   user-select: none;
