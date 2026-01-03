@@ -16,8 +16,7 @@
   width: 100%;      /* 横幅いっぱいに表示 */
   height: auto;     /* 縦横比を保つ */
   display: block;   /* 余計な隙間を消す */
-  margin-top: 20;    /* ヘッダーとの隙間をなくす */
-  margin-bottom: 20px;
+  margin-top: 10;    /* ヘッダーとの隙間をなくす */
 
 }
 
