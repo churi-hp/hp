@@ -18,16 +18,26 @@
   <!-- トピックス横スライドバー -->
 <div class="slider-wrapper">
   <div class="slider" id="slider">
-    <div class="slide"><img src="img1.jpg" alt=""></div>
-    <div class="slide"><img src="img2.jpg" alt=""></div>
-    <div class="slide"><img src="img3.jpg" alt=""></div>
-    <div class="slide"><img src="img4.jpg" alt=""></div>
-    <div class="slide"><img src="img5.jpg" alt=""></div>
-    <div class="slide"><img src="img6.jpg" alt=""></div>
-    <div class="slide"><img src="img7.jpg" alt=""></div>
+    <!-- 元の7枚 -->
+    <div class="slide"><img src="img1.jpg"></div>
+    <div class="slide"><img src="img2.jpg"></div>
+    <div class="slide"><img src="img3.jpg"></div>
+    <div class="slide"><img src="img4.jpg"></div>
+    <div class="slide"><img src="img5.jpg"></div>
+    <div class="slide"><img src="img6.jpg"></div>
+    <div class="slide"><img src="img7.jpg"></div>
+
+    <!-- ★複製（ループ用） -->
+    <div class="slide"><img src="img1.jpg"></div>
+    <div class="slide"><img src="img2.jpg"></div>
+    <div class="slide"><img src="img3.jpg"></div>
+    <div class="slide"><img src="img4.jpg"></div>
+    <div class="slide"><img src="img5.jpg"></div>
+    <div class="slide"><img src="img6.jpg"></div>
+    <div class="slide"><img src="img7.jpg"></div>
   </div>
 </div>
-
+  
     <!-- SNSアイコンバー（記事1の上） -->
   <div class="social-links">
     <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -52,69 +62,50 @@
 <script>
 const slider = document.getElementById('slider');
 const slideWidth = 150;
-const slideCount = slider.children.length;
-
-let currentIndex = 0;
-let autoSlideTimer = null;
-
-// 指でスワイプした時の制御
-let isTouching = false;
-let startX = 0;
-
-// 指で触ったら自動スライド停止
-slider.addEventListener('touchstart', (e) => {
-  isTouching = true;
-  stopAutoSlide();
-  startX = e.touches[0].clientX;
-});
-
-// 指を動かしている間はスクロール
-slider.addEventListener('touchmove', (e) => {
-  if (!isTouching) return;
-  const currentX = e.touches[0].clientX;
-  const diffX = startX - currentX;
-  slider.scrollLeft += diffX;
-  startX = currentX;
-});
-
-// 指を離したら最寄りのスライドへスナップ
-slider.addEventListener('touchend', () => {
-  isTouching = false;
-  const index = Math.round(slider.scrollLeft / slideWidth);
-  goToSlide(index);
-
-  // 少し待ってから自動スライド再開
-  setTimeout(() => {
-    startAutoSlide();
-  }, 1500);
-});
+const originalCount = 7; // 元の画像枚数
+let position = 0;
 
 // 自動スライド
-function goToSlide(index) {
-  currentIndex = index;
-  slider.scrollTo({
-    left: slideWidth * currentIndex,
-    behavior: 'smooth'
-  });
-}
+function autoSlide() {
+  position += 1; // 1pxずつ動かす（自然な流れ）
+  slider.style.transform = `translateX(${-position}px)`;
 
-function startAutoSlide() {
-  stopAutoSlide();
-  autoSlideTimer = setInterval(() => {
-    const nextIndex = (currentIndex + 1) % slideCount;
-    goToSlide(nextIndex);
-  }, 2500); // 2.5秒ごとに1枚進む
-}
-
-function stopAutoSlide() {
-  if (autoSlideTimer !== null) {
-    clearInterval(autoSlideTimer);
-    autoSlideTimer = null;
+  // ★ ループ処理（元の7枚ぶん進んだら巻き戻す）
+  if (position >= slideWidth * originalCount) {
+    position = 0;
+    slider.style.transition = "none";
+    slider.style.transform = `translateX(0px)`;
+    requestAnimationFrame(() => {
+      slider.style.transition = "transform 0.2s linear";
+    });
   }
 }
 
-// 初期起動
-startAutoSlide();
+setInterval(autoSlide, 10); // スピード調整可能
+
+// ----------------------
+// スワイプ対応
+// ----------------------
+let startX = 0;
+let isTouching = false;
+
+slider.addEventListener('touchstart', (e) => {
+  isTouching = true;
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchmove', (e) => {
+  if (!isTouching) return;
+  const currentX = e.touches[0].clientX;
+  const diff = startX - currentX;
+  position += diff;
+  slider.style.transform = `translateX(${-position}px)`;
+  startX = currentX;
+});
+
+slider.addEventListener('touchend', () => {
+  isTouching = false;
+});
   </script>
 
   
