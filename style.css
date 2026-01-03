@@ -27,14 +27,14 @@
 }
 
 /* 横に並べるトラック */
-.loop-track {
+.loop-slider {
   display: flex;
   width: calc(250px * 8); /* 画像幅 × 枚数（2倍にすると滑らか） */
   animation: scroll 20s linear infinite;
 }
 
 /* 画像のスタイル */
-.loop-track img {
+.loop-slider img {
   width: 70px;      /* 固定したい横幅 */
   height: 70px;     /* 固定したい高さ */
   object-fit: cover; /* 画像を切り抜いて枠にフィット */
