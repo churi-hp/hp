@@ -23,6 +23,7 @@
 .topics-slider {
   margin-top: 15px;   /* 上に40pxの余白 */
   margin-bottom: 15px
+  width: 100%;      /* 横幅いっぱいに表示 */  
   overflow-x: auto;              /* 横スクロール可能にする */
   white-space: nowrap;           /* 横並び */
   background: #f5f5f5;
