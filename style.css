@@ -25,13 +25,13 @@
   position: relative;
 }
 
-.slides {
+.slider {
   display: flex;
   width: 300%; /* 画像3枚なら3倍 */
   animation: slide 12s infinite;
 }
 
-.slides img {
+.slider img {
   width: 150%;
   height: 150%;
   flex-shrink: 0;
