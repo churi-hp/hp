@@ -15,8 +15,7 @@
   <!-- ヘッダー下写真 -->
 <img src="CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG" alt="説明文" class="under-header-photo">
  
-  <!-- トピックス横スライドバー -->
- <div class="loop-slider" id="loopSlider">
+<div class="loop-slider" id="loopSlider">
   <div class="track">
     <img src="img1.jpg" />
     <img src="img2.jpg" />
@@ -62,16 +61,17 @@
   const slider = document.getElementById("loopSlider");
   const track = slider.querySelector(".track");
   const images = track.children;
-  const imgWidth = 150; // 画像幅
-  const total = images.length / 2; // 元の画像枚数（7）
 
   let position = 0;
 
   function autoSlide() {
     position += 1; // 1pxずつ動かす（速度調整可）
 
-    // 7枚 × 150px = 1050px を超えたらリセット
-    if (position >= imgWidth * total) {
+    // 画像1枚の幅（常に画面幅）
+    const imgWidth = slider.clientWidth;
+
+    // 7枚分の幅を超えたらリセット（無限ループ）
+    if (position >= imgWidth * 7) {
       position = 0;
     }
 
@@ -79,7 +79,7 @@
   }
 
   // 自動スライド開始
-  let timer = setInterval(autoSlide, 20); // 速度は20msごとに1px
+  let timer = setInterval(autoSlide, 10); // 速度調整：10msごとに1px
 
   // スワイプしたら一時停止
   slider.addEventListener("touchstart", () => {
@@ -88,7 +88,7 @@
 
   // スワイプ終了後、再開
   slider.addEventListener("touchend", () => {
-    timer = setInterval(autoSlide, 20);
+    timer = setInterval(autoSlide, 10);
   });
 </script>
   
