@@ -1,12 +1,9 @@
 /* ヘッダー部分 */
 .site-header {
-  background: url("CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG") center/cover no-repeat;
-  text-align: center;
-  padding: 240px 20px;
-  color: white;
+  padding: 40px 20px;
+  color: black;
 }
 .site-title {
-  display: none;
   font-size: 3rem;
   margin: 0;
 }
