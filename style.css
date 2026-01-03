@@ -27,7 +27,7 @@ body {
 }
 
 .slider-wrapper {
-  width: 200px;        /* 表示枠は写真1枚分 */
+  width: 100%;        /* 表示枠は写真1枚分 */
   height: 200px;
   margin: 0 auto;
   overflow: hidden;
