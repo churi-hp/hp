@@ -16,17 +16,17 @@
 <img src="CF8EFF4C-1670-4AF8-8611-427EA5033F65.JPG" alt="説明文" class="under-header-photo">
  
   <!-- トピックス横スライドバー -->
-  <section class="slider">
-    <div class="slider">
-      <img src="images/topic1.jpg" alt="トピック1">
-      <img src="IMG_2628.png.jpg" alt="トピック2">
-      <img src="IMG_6102.PNG" alt="トピック3">
-      <img src="IMG_9695 2.JPG.jpg" alt="トピック4">
-      <img src="images/topic5.jpg" alt="トピック5">
-      <img src="images/topic6.jpg" alt="トピック6">
-      <img src="images/topic7.jpg" alt="トピック7">
-    </div>
-  </section>
+<div class="slider-wrapper">
+  <div class="slider" id="slider">
+    <div class="slide"><img src="img1.jpg" alt=""></div>
+    <div class="slide"><img src="img2.jpg" alt=""></div>
+    <div class="slide"><img src="img3.jpg" alt=""></div>
+    <div class="slide"><img src="img4.jpg" alt=""></div>
+    <div class="slide"><img src="img5.jpg" alt=""></div>
+    <div class="slide"><img src="img6.jpg" alt=""></div>
+    <div class="slide"><img src="img7.jpg" alt=""></div>
+  </div>
+</div>
 
     <!-- SNSアイコンバー（記事1の上） -->
   <div class="social-links">
@@ -48,5 +48,75 @@
       <p>ここに記事の内容が入ります。写真やリンクを追加することも可能です。</p>
     </article>
   </main>
+  
+<script>
+const slider = document.getElementById('slider');
+const slideWidth = 150;
+const slideCount = slider.children.length;
+
+let currentIndex = 0;
+let autoSlideTimer = null;
+
+// 指でスワイプした時の制御
+let isTouching = false;
+let startX = 0;
+
+// 指で触ったら自動スライド停止
+slider.addEventListener('touchstart', (e) => {
+  isTouching = true;
+  stopAutoSlide();
+  startX = e.touches[0].clientX;
+});
+
+// 指を動かしている間はスクロール
+slider.addEventListener('touchmove', (e) => {
+  if (!isTouching) return;
+  const currentX = e.touches[0].clientX;
+  const diffX = startX - currentX;
+  slider.scrollLeft += diffX;
+  startX = currentX;
+});
+
+// 指を離したら最寄りのスライドへスナップ
+slider.addEventListener('touchend', () => {
+  isTouching = false;
+  const index = Math.round(slider.scrollLeft / slideWidth);
+  goToSlide(index);
+
+  // 少し待ってから自動スライド再開
+  setTimeout(() => {
+    startAutoSlide();
+  }, 1500);
+});
+
+// 自動スライド
+function goToSlide(index) {
+  currentIndex = index;
+  slider.scrollTo({
+    left: slideWidth * currentIndex,
+    behavior: 'smooth'
+  });
+}
+
+function startAutoSlide() {
+  stopAutoSlide();
+  autoSlideTimer = setInterval(() => {
+    const nextIndex = (currentIndex + 1) % slideCount;
+    goToSlide(nextIndex);
+  }, 2500); // 2.5秒ごとに1枚進む
+}
+
+function stopAutoSlide() {
+  if (autoSlideTimer !== null) {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = null;
+  }
+}
+
+// 初期起動
+startAutoSlide();
+  </script>
+
+  
 </body>
 </html>
