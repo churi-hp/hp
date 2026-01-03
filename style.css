@@ -17,7 +17,6 @@
   height: auto;     /* 縦横比を保つ */
   display: block;   /* 余計な隙間を消す */
   margin-top: 10px;    /* ヘッダーとの隙間をなくす */
-
 }
 
 .loop-slider {
