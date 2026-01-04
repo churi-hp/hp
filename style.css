@@ -1,8 +1,18 @@
 /* ヘッダー部分 */
 .site-header {
   display: flex;
-  padding: 0px 0px 0px 0px;
   color: black;
+  justify-content: space-between; /* 左右に配置 */
+  align-items: center;            /* 縦位置を中央に */
+  padding: 10px 20px;
+}
+
+.header-link img {
+  width: 120px;   /* 好きなサイズに調整 */
+  height: auto;
+  cursor: pointer;
+}
+  
 }
 .site-title {
   font-size: 5rem;
