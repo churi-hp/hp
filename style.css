@@ -59,11 +59,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 0px 5px 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .articles h3 {
-  font-size: 2.5rem;
+  font-size: 3rem;
    font-weight: bold;          /* 太字 */
   text-decoration: underline; /* 下線 */
   margin: 0px 0px 10px 5px;
@@ -74,6 +74,7 @@
   font-weight: bold;            /* 太字（必要なら） */
   color: #ff0000;               /* 文字色（自由に変更OK） */
   animation: wave 3s infinite ease-in-out; /* 永遠に繰り返す */
+  margin: 0px 0px 0px 10px;
 }
 
 /* 波のようにゆらゆら動く */
