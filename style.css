@@ -17,8 +17,6 @@
   width: 100vw;        /* 画面の幅いっぱい（viewport width） */
   height: auto;        /* 縦横比を保つ */
 }
-  width: auto;     /* 縦横比を保つ */
-}
 
 .loop-slider {
   margin-top: 50px
