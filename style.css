@@ -69,21 +69,29 @@
   margin: 0px 0px 10px 5px;
 }
 
-.highlight-word {
-  font-family: 'Arial Black', sans-serif; /* フォント変更 */
-  color: #ffcc00;                         /* 文字色変更 */
-  font-weight: bold;                      /* 太字 */
-  display: inline-block;                  /* アニメのために必要 */
-  animation: bounce 1.2s infinite ease-in-out; /* アニメーション */
+.wave-word {
+  display: inline-block;        /* アニメに必須 */
+  font-weight: bold;            /* 太字（必要なら） */
+  color: #00c8ff;               /* 文字色（自由に変更OK） */
+  animation: wave 3s infinite ease-in-out; /* 永遠に繰り返す */
 }
 
-/* 少し上下に動くアニメーション */
-@keyframes bounce {
+/* 波のようにゆらゆら動く */
+@keyframes wave {
   0%, 100% {
     transform: translateY(0);
   }
-  50% {
-    transform: translateY(-4px); /* 上に少し動く */
+  20% {
+    transform: translateY(-4px);
+  }
+  40% {
+    transform: translateY(2px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+  80% {
+    transform: translateY(1px);
   }
 }
 
