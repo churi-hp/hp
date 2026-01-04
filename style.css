@@ -13,8 +13,7 @@
 }
 
 .under-header-photo {
-  height: 250px;     /* 縦横比を保つ */
-  width: 250px;
+  width: 100%;     /* 縦横比を保つ */
 }
 
 .loop-slider {
@@ -35,7 +34,6 @@
 
 .loop-slider img {
   width: 250px;
-  height: auto;
   flex-shrink: 0;
 }
 
