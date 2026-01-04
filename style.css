@@ -1,15 +1,15 @@
 /* ヘッダー部分 */
 .site-header {
+  display: flex;
   padding: 40px 10px;
   color: black;
 }
 .site-title {
-  font-size: 3rem;
+  font-size: 5rem;
   margin: 0;
 }
 .site-subtitle {
-  font-size: 1.2rem;
-  margin: 10px 0 0;
+  font-size: 2rem;
 }
 
 .under-header-photo {
