@@ -59,37 +59,50 @@
 
 <script>
   const slider = document.getElementById("loopSlider");
-  const track = slider.querySelector(".track");
-  const images = track.children;
+  const totalImages = 7; // 元の画像枚数
 
-  let position = 0;
+  let timer;
+  let isTouching = false;
 
-  function autoSlide() {
-    position += 1; // 1pxずつ動かす（速度調整可）
+  function startAutoSlide() {
+    timer = setInterval(() => {
+      slider.scrollLeft += 1;
 
-    // 画像1枚の幅（常に画面幅）
-    const imgWidth = slider.clientWidth;
+      const imgWidth = slider.clientWidth;
 
-    // 7枚分の幅を超えたらリセット（無限ループ）
-    if (position >= imgWidth * 7) {
-      position = 0;
-    }
-
-    slider.scrollLeft = position;
+      // 7枚分を超えたら巻き戻し（無限ループ）
+      if (slider.scrollLeft >= imgWidth * totalImages) {
+        slider.scrollLeft = 0;
+      }
+    }, 10);
   }
 
-  // 自動スライド開始
-  let timer = setInterval(autoSlide, 10); // 速度調整：10msごとに1px
-
-  // スワイプしたら一時停止
-  slider.addEventListener("touchstart", () => {
+  function stopAutoSlide() {
     clearInterval(timer);
+  }
+
+  // スワイプ開始 → 自動スライド停止
+  slider.addEventListener("touchstart", () => {
+    isTouching = true;
+    stopAutoSlide();
   });
 
-  // スワイプ終了後、再開
+  // スワイプ終了 → その位置から再開
   slider.addEventListener("touchend", () => {
-    timer = setInterval(autoSlide, 10);
+    isTouching = false;
+    startAutoSlide();
   });
+
+  // PC用：マウスドラッグにも対応
+  slider.addEventListener("mousedown", () => {
+    stopAutoSlide();
+  });
+  slider.addEventListener("mouseup", () => {
+    startAutoSlide();
+  });
+
+  // 初回スタート
+  startAutoSlide();
 </script>
   
 </body>
