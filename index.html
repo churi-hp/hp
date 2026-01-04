@@ -59,7 +59,7 @@
 
 <script>
   const slider = document.getElementById("loopSlider");
-  const totalImages = 7; // 元の画像枚数
+  const totalImages = 7;
 
   let timer;
   let isTouching = false;
@@ -70,7 +70,6 @@
 
       const imgWidth = slider.clientWidth;
 
-      // 7枚分を超えたら巻き戻し（無限ループ）
       if (slider.scrollLeft >= imgWidth * totalImages) {
         slider.scrollLeft = 0;
       }
@@ -81,23 +80,38 @@
     clearInterval(timer);
   }
 
-  // スワイプ開始 → 自動スライド停止
+  // スワイプ開始
   slider.addEventListener("touchstart", () => {
     isTouching = true;
     stopAutoSlide();
+
+    // スワイプ中はスムーススクロールを無効化
+    slider.style.scrollBehavior = "auto";
   });
 
-  // スワイプ終了 → その位置から再開
+  // スワイプ中に動かしている間も自動スライドは止める
+  slider.addEventListener("touchmove", () => {
+    stopAutoSlide();
+  });
+
+  // スワイプ終了
   slider.addEventListener("touchend", () => {
     isTouching = false;
+
+    // スワイプ後はスムーススクロールを戻す
+    slider.style.scrollBehavior = "smooth";
+
     startAutoSlide();
   });
 
-  // PC用：マウスドラッグにも対応
+  // PC用（マウスドラッグ）
   slider.addEventListener("mousedown", () => {
     stopAutoSlide();
+    slider.style.scrollBehavior = "auto";
   });
+
   slider.addEventListener("mouseup", () => {
+    slider.style.scrollBehavior = "smooth";
     startAutoSlide();
   });
 
