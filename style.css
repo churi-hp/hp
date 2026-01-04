@@ -16,7 +16,7 @@
 }
 
 .site-title {
-  font-size: 60px; /* タイトルの大きさ */
+  font-size: 90px; /* タイトルの大きさ */
   margin: 0;
 }
 
@@ -28,7 +28,7 @@
 
 /* 右端のイラストリンク */
 .header-link img {
-  width: 200px; /* サイズは自由に変更 */
+  width: 240px; /* サイズは自由に変更 */
   height: auto;
   cursor: pointer;
 }
