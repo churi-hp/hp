@@ -1,32 +1,32 @@
 /* ヘッダー部分 */
+/* ヘッダー全体：左ブロックと右ブロックを左右に配置 */
 .site-header {
   display: flex;
-  justify-content: space-between; /* 左右に配置 */
-  align-items: center;            /* 縦位置を中央に */
+  justify-content: space-between; /* 左右に分ける */
+  align-items: center;            /* 縦位置を揃える */
   padding: 10px 20px;
 }
 
-/* タイトルとサブタイトルを横並び */
+/* タイトル＋サブタイトルを左寄せで横並び */
 .title-wrap {
   display: flex;
-  gap: 10px; /* タイトルとサブタイトルの間隔 */
-  align-items: baseline; /* 見た目を揃える */
+  justify-content: flex-start; /* 左寄せ */
+  align-items: baseline;       /* 文字のラインを揃える */
+  gap: 10px;                   /* タイトルとサブタイトルの間隔 */
 }
 
 .site-title {
-  font-size: 24px;
   margin: 0;
 }
 
 .site-subtitle {
-  font-size: 16px;
   margin: 0;
   color: #666;
 }
 
-/* 右端の画像リンク */
+/* 右端のイラストリンク */
 .header-link img {
-  width: 120px; /* 好きなサイズに変更可能 */
+  width: 120px; /* サイズは自由に変更 */
   height: auto;
   cursor: pointer;
 }
