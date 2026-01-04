@@ -12,7 +12,7 @@
 .site-subtitle {
   font-size: 2rem;
   align-self: flex-end; /* サブタイトルを下に寄せる */
-  padding: 0px 0px 5px 0px;
+  padding: 0px 0px 0px 0px;
 }
 
 .under-header-photo {
@@ -72,7 +72,7 @@
 .wave-word {
   display: inline-block;        /* アニメに必須 */
   font-weight: bold;            /* 太字（必要なら） */
-  color: #00c8ff;               /* 文字色（自由に変更OK） */
+  color: #ff0000;               /* 文字色（自由に変更OK） */
   animation: wave 3s infinite ease-in-out; /* 永遠に繰り返す */
 }
 
