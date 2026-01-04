@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between; /* 左右に分ける */
   align-items: center;            /* 縦位置を揃える */
-  padding: 10px 20px;
+  padding: 10px 10px;
 }
 
 /* タイトル＋サブタイトルを左寄せで横並び */
@@ -16,12 +16,12 @@
 }
 
 .site-title {
-  font-size: 90px; /* タイトルの大きさ */
+  font-size: 70px; /* タイトルの大きさ */
   margin: 0;
 }
 
 .site-subtitle {
-  font-size: 45px; /* タイトルの大きさ */
+  font-size: 40px; /* タイトルの大きさ */
   margin: 0;
   color: #666;
 }
