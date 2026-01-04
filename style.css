@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between; /* 左右に分ける */
   align-items: center;            /* 縦位置を揃える */
-  padding: 10px 10px;
+  padding: 10px 20px 0px 20px;
 }
 
 /* タイトル＋サブタイトルを左寄せで横並び */
