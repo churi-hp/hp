@@ -61,15 +61,20 @@
   const slider = document.getElementById("loopSlider");
   const totalImages = 7;
 
-  let timer;
+  let autoTimer = null;
+  let restartTimer = null;
   let isTouching = false;
 
+  // 自動スライド（一定速度で流れる）
   function startAutoSlide() {
-    timer = setInterval(() => {
+    stopAutoSlide(); // 二重起動防止
+
+    autoTimer = setInterval(() => {
       slider.scrollLeft += 1;
 
       const imgWidth = slider.clientWidth;
 
+      // 無限ループ
       if (slider.scrollLeft >= imgWidth * totalImages) {
         slider.scrollLeft = 0;
       }
@@ -77,7 +82,7 @@
   }
 
   function stopAutoSlide() {
-    clearInterval(timer);
+    clearInterval(autoTimer);
   }
 
   // スワイプ開始
@@ -87,9 +92,12 @@
 
     // スワイプ中はスムーススクロールを無効化
     slider.style.scrollBehavior = "auto";
+
+    // 再開待ちタイマーも止める
+    clearTimeout(restartTimer);
   });
 
-  // スワイプ中に動かしている間も自動スライドは止める
+  // スワイプ中も自動スライドは止めておく
   slider.addEventListener("touchmove", () => {
     stopAutoSlide();
   });
@@ -98,21 +106,29 @@
   slider.addEventListener("touchend", () => {
     isTouching = false;
 
-    // スワイプ後はスムーススクロールを戻す
+    // スワイプ後は一瞬だけ“自然に滑らかに動き出す”
     slider.style.scrollBehavior = "smooth";
 
-    startAutoSlide();
+    // 0.3秒後に自動スライド再開（自然に見える最適値）
+    restartTimer = setTimeout(() => {
+      slider.style.scrollBehavior = "auto"; // 自動スライド中はautoが自然
+      startAutoSlide();
+    }, 300);
   });
 
   // PC用（マウスドラッグ）
   slider.addEventListener("mousedown", () => {
     stopAutoSlide();
     slider.style.scrollBehavior = "auto";
+    clearTimeout(restartTimer);
   });
 
   slider.addEventListener("mouseup", () => {
     slider.style.scrollBehavior = "smooth";
-    startAutoSlide();
+    restartTimer = setTimeout(() => {
+      slider.style.scrollBehavior = "auto";
+      startAutoSlide();
+    }, 300);
   });
 
   // 初回スタート
