@@ -12,10 +12,6 @@
   margin: 10px 0 0;
 }
 
-  body {
-  margin: 0;           /* 余白を消して本当に端まで広げる */
-}
-
 .under-header-photo {
   display: block;      /* 画像の下の余白を消したいときに便利 */
   width: 100vw;        /* 画面の幅いっぱい（viewport width） */
