@@ -52,17 +52,18 @@
   margin-bottom: 40px;
 }
 .articles h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 10px;
   display: inline-block;
-  transform: rotate(-15deg); /* 文字を左に15度傾ける */
+  transform: rotate(-5deg); /* 文字を左に15度傾ける */
 
 }
 .articles h3 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 .articles p {
+    font-size: 1.5rem;
   line-height: 1.6;
 }
