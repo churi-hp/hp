@@ -16,17 +16,19 @@
 }
 
 .site-title {
+  font-size: 60px; /* タイトルの大きさ */
   margin: 0;
 }
 
 .site-subtitle {
+  font-size: 45px; /* タイトルの大きさ */
   margin: 0;
   color: #666;
 }
 
 /* 右端のイラストリンク */
 .header-link img {
-  width: 120px; /* サイズは自由に変更 */
+  width: 200px; /* サイズは自由に変更 */
   height: auto;
   cursor: pointer;
 }
