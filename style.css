@@ -41,34 +41,41 @@
   padding: 10px 10px 10px 10px;
 }
 
-/* SNSアイコンバー */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 5px 0;
+/* SNSアイコン全体の並び */
+.sns-links {
+  display: flex;              /* 横並び */
+  gap: 10px;                  /* アイコン同士のすき間 */
+  align-items: center;
 }
 
-.social-links a {
-  display: inline-flex;
+/* 各アイコンの共通スタイル（丸・モノクロ） */
+.sns-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;         /* まん丸にする */
+  background-color: #333;     /* 濃いグレー（モノクロ） */
+  color: #fff;                /* 文字は白 */
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #f0f0f0;   /* 薄いグレー背景 */
-  color: #333333;              /* 濃いグレーのアイコン */
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  text-decoration: none;      /* 下線を消す */
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
-/* ホバー時の効果（反転） */
-.social-links a:hover {
-  background-color: #333333;   /* 黒背景 */
-  color: #f0f0f0;              /* アイコンを白に反転 */
-  transform: scale(1.1);
+/* ホバー時のちょっとしたアニメーション */
+.sns-icon:hover {
+  background-color: #555;     /* 少し明るいグレー */
+  transform: translateY(-2px);
 }
+
+/* それぞれに微妙な違いをつけたい場合（色は全部モノクロ寄り） */
+.sns-icon.youtube   { background-color: #222; }
+.sns-icon.x         { background-color: #2a2a2a; }
+.sns-icon.tiktok    { background-color: #262626; }
+.sns-icon.instagram { background-color: #303030; }
+.sns-icon.facebook  { background-color: #282828; }
 
 /* 記事エリア */
 .articles {
