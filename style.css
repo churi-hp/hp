@@ -69,6 +69,24 @@
   margin: 0px 0px 10px 5px;
 }
 
+.highlight-word {
+  font-family: 'Arial Black', sans-serif; /* フォント変更 */
+  color: #ffcc00;                         /* 文字色変更 */
+  font-weight: bold;                      /* 太字 */
+  display: inline-block;                  /* アニメのために必要 */
+  animation: bounce 1.2s infinite ease-in-out; /* アニメーション */
+}
+
+/* 少し上下に動くアニメーション */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px); /* 上に少し動く */
+  }
+}
+
 .articles p {
   font-size: 1.5rem;
   padding: 0px 0px 0px 20px;
