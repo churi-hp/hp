@@ -46,18 +46,17 @@
 /* 記事エリア */
 .articles {
   max-width: 800px;
-  margin: 40px auto;
+  margin: 20px 0px 10px 10px;
   padding: 0 20px;
 }
 .articles article {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 .articles h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 10px;
   display: inline-block;
-  transform: rotate(-5deg); /* 文字を左に15度傾ける */
 
 }
 .articles h3 {
