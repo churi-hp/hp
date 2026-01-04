@@ -22,7 +22,6 @@
 .loop-slider {
   width: 100%;
   overflow-x: scroll;
-  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;
 }
@@ -36,7 +35,7 @@
 }
 
 .loop-slider img {
-  width: 100%;      /* 横幅いっぱい */
+  width: 100%;
   height: auto;
   flex-shrink: 0;
 }
