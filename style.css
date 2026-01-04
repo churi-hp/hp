@@ -1,18 +1,18 @@
 /* ヘッダー部分 */
 .site-header {
   display: flex;
-  padding: 10px 0px 0px 10px;
+  padding: 10px 0px 0px 0px;
   color: black;
 }
 .site-title {
   font-size: 5rem;
   align-self: flex-end; /* サブタイトルを下に寄せる */
-  margin: 0px 25px 0px 0px;
+  margin: 0px 25px 0px 10px;
 }
 .site-subtitle {
   font-size: 2rem;
   align-self: flex-end; /* サブタイトルを下に寄せる */
-  margin:0px 0px 5px 0px;
+  padding: 0px 0px 5px 0px;
 }
 
 .under-header-photo {
