@@ -41,42 +41,6 @@
   padding: 10px 10px 10px 10px;
 }
 
-/* SNSアイコン全体の並び */
-.sns-links {
-  display: flex;              /* 横並び */
-  gap: 10px;                  /* アイコン同士のすき間 */
-  align-items: center;
-}
-
-/* 各アイコンの共通スタイル（丸・モノクロ） */
-.sns-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;         /* まん丸にする */
-  background-color: #333;     /* 濃いグレー（モノクロ） */
-  color: #fff;                /* 文字は白 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;      /* 下線を消す */
-  font-size: 18px;
-  font-weight: bold;
-  transition: background-color 0.2s, transform 0.2s;
-}
-
-/* ホバー時のちょっとしたアニメーション */
-.sns-icon:hover {
-  background-color: #555;     /* 少し明るいグレー */
-  transform: translateY(-2px);
-}
-
-/* それぞれに微妙な違いをつけたい場合（色は全部モノクロ寄り） */
-.sns-icon.youtube   { background-color: #222; }
-.sns-icon.x         { background-color: #2a2a2a; }
-.sns-icon.tiktok    { background-color: #262626; }
-.sns-icon.instagram { background-color: #303030; }
-.sns-icon.facebook  { background-color: #282828; }
-
 /* 記事エリア */
 .articles {
   max-width: 800px;
