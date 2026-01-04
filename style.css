@@ -53,8 +53,14 @@
 .articles h2 {
   font-size: 3.5rem;
   font-family: 'Montserrat', sans-serif;
+  width: 100%;              /* 横幅いっぱい */
+  background-color: #000;   /* 背景を黒に */
+  color: #fff;              /* 文字を白に（必要なら） */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
   margin-bottom: 10px;
-  display: inline-block;
 }
 
 .articles h3 {
